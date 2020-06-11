@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Welcome to home page!</h1>
+      {% if jobs %}
+        <table>
+          <thead>
+            <th>Job name</th>
+            <th>Job URL</th>
+          </thead>
+          {% for entry in jobs %}
+          <tr>
+            <td>{{entry.job_name}}</td>
+            <td><a href="https://www.google.com/">{{entry.more_info}}</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+          <h1>No such thing exists</h1>
+        {% endif %}
+
+    </div>
+  </body>
+</html>
